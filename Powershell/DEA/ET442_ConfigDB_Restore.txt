@@ -1,0 +1,1 @@
+restoredatabase -RequestNum 711 -ServerInstance LAS1P03C163I06\I06 -Database ConfigDB -RestoreType Database -BackupFile C:\Backup_pod3_set2\ -OverWriteDatabase 0 -OperationType Restore -Verbose -RestoreLunPath K:\SQL\I06\ConfigDB\ -DryRun 1

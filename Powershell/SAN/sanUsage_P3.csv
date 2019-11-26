@@ -1,0 +1,59 @@
+Server Name,ClusterName,DBName,DBSize
+XTNVCL06D5\I5 - ET428 (AutoNTO),Cluster XTNVCL06,[S4] ET428 (AutoNTO),4810752
+XTNVCL05D5\I5 - ET436 (SCENTSY),Cluster XTNVCL05,[S4] ET436 (SCENTSY),1488128
+"XTNVCL11D2\I2 - ET35 (Gilt.com), ET404 (JetSetter)",Cluster XTNVCL11,"[S4] ET35 (Gilt.com), ET404 (JetSetter)",2103296
+"XTNVCL11D2\I2 - ET35 (Gilt.com), ET404 (JetSetter)",Cluster XTNVCL11,"[S4] ET35 (Gilt.com), ET404 (JetSetter)",2680832
+XTNVCL06D4\I4 - ET427 (Zappos),Cluster XTNVCL06,[S4] ET427 (Zappos),37137973.44
+"XTNVCL08D3\I3 - ET26 (Amazon), ETUser1 (Multi)",Cluster XTNVCL08,"[S4] ET26 (Amazon), ETUser1 (Multi)",1154489
+XTNVCL05D1\I1 - ET19 Encrypted (Intuit),Cluster XTNVCL05,[S4] ET19 Encrypted (Intuit),8272897
+XTNVCL05D4\I4 - ET449 (Money Super Market),Cluster XTNVCL05,[S4] ET449 (Money Super Market),27346176
+XTNVCL10D7\I7 - ET453 (Acxiom - Capital One),Cluster XTNVCL10,[S4] ET453 (Acxiom - Capital One),5677972.938
+XTNVP3CL21D3\I3 - ET446 (Multi Customer),Cluster XTNVP3CL21,[S4] ET446 (Multi Customer),11320576
+XTNVCL06D1\I1 - ET424 (F+W Media),Cluster XTNVCL06,[S4] ET424 (F+W Media),18867200
+LAS1P03C040I05\I05 - ET412 (Live Nation),Cluster LAS1P03C040,[S4] ET412 (Live Nation),33783078.81
+XTNVCL06D3\I3 - ET426 (GroupOn Russia),Cluster XTNVCL06,[S4] ET426 (GroupOn Russia),6629376
+XTNVCL09D1\I1 - ET439 (Multi Customer),Cluster XTNVCL09,[S4] ET439 (Multi Customer),5578752
+XTNVCL02D6\I6 - ET438 (Abercrombie & Fitch),Cluster XTNVCL02,[S4] ET438 (Abercrombie & Fitch),10677875.94
+XTNVCL03D4\I4 - ET413 (Performance Engineering - prodops),Cluster XTNVCL03,[S4] ET413 (Performance Engineering - prodops),15252362.19
+XTNVCL05D3\I3 - ET403 (QualityHealth),Cluster XTNVCL05,[S4] ET403 (QualityHealth),4465920
+XTNVCL05D6\I6 - ET437 (Match.com),Cluster XTNVCL05,[S4] ET437 (Match.com),3659008
+XTNVCL02D1\I1 - ET406 (GroupOn Europe),Cluster XTNVCL02,[S4] ET406 (GroupOn Europe),1339392
+XTNVCL06D6\I6 - ET457 (Destination Maternity),Cluster XTNVCL06,[S4] ET457 (Destination Maternity),1177600
+XTNVCL10D8\I8 - ET454 (HP - Future),Cluster XTNVCL10,[S4] ET454 (HP - Future),1385728
+XTNVCL01D5\I5 - ET422 Encrypted (GEICO),Cluster XTNVCL01,[S4] ET422 Encrypted (GEICO),12801128.94
+XTNVCL11D3\I3 - ET402 (Priceline DR),Cluster XTNVCL11,[S4] ET402 (Priceline DR),1470464
+XTNVCL10D1\I1 - ET441 (AutoNTO),Cluster XTNVCL10,[S4] ET441 (AutoNTO),6077696
+XTNVCL07D3\I3 - ET432 (Acxiom - Guardian),Cluster XTNVCL07,[S4] ET432 (Acxiom - Guardian),4167680
+XTNVCL10D9\I9 - ET455 (Gemini customers),Cluster XTNVCL10,[S4] ET455 (Gemini customers),1385728
+XTNVCL10D4\I4 - ET400 (Web.com),Cluster XTNVCL10,[S4] ET400 (Web.com),4900048
+XTNVCL09D5\I5 - ET445 (Multi Customer),Cluster XTNVCL09,[S4] ET445 (Multi Customer),32374975.81
+XTNVCL07D6\I6 - ET435 (Lowes Companies),Cluster XTNVCL07,[S4] ET435 (Lowes Companies),19053922.25
+XTNVCL09D3\I3 - ET443 (Multi Customer),Cluster XTNVCL09,[S4] ET443 (Multi Customer),14476544
+XTNVCL04D6\I6 - ET421 (Hallmark Data System),Cluster XTNVCL04,[S4] ET421 (Hallmark Data System),12700863.94
+XTNVCL02D2\I2 - ET407 (Adobe),Cluster XTNVCL02,[S4] ET407 (Adobe),4773888
+XTNVCL03D5\I5 - ET418 (Fidelity Brokerage Services),Cluster XTNVCL03,[S4] ET418 (Fidelity Brokerage Services),10598447.94
+XTNVCL07D5\I5 - ET434 (Multi Customer),Cluster XTNVCL07,[S4] ET434 (Multi Customer),15143941.94
+"XTNVCL09D4\I4 - ET444 (iHeartRadio), ET452 (Cyberdyne)",Cluster XTNVCL09,"[S4] ET444 (iHeartRadio), ET452 (Cyberdyne)",5089280
+"XTNVCL09D4\I4 - ET444 (iHeartRadio), ET452 (Cyberdyne)",Cluster XTNVCL09,"[S4] ET444 (iHeartRadio), ET452 (Cyberdyne)",10820864
+XTNVCL02D3\I3 - ET408 (Multi Customer),Cluster XTNVCL02,[S4] ET408 (Multi Customer),9664512
+XTNVP3CL21D2\I2 - ET429 (Acxiom),Cluster XTNVP3CL21,[S4] ET429 (Acxiom),37562520
+XTNVCL09D2\I2 - ET440 (Sony Computer Entertainment Europe),Cluster XTNVCL09,[S4] ET440 (Sony Computer Entertainment Europe),16105989.94
+XTNVCL10D2\I2 - ET442 (AARP),Cluster XTNVCL10,[S4] ET442 (AARP),12398080
+XTNVCL04D2\I2 - ET415 Encrypted (RedBox),Cluster XTNVCL04,[S4] ET415 Encrypted (RedBox),43926432
+XTNVCL04D4\I4 - ET417 (Frontier Digital),Cluster XTNVCL04,[S4] ET417 (Frontier Digital),17585379.88
+XTNVP3CL21D4\I4 - ET447 (Multi Customer),Cluster XTNVP3CL21,[S4] ET447 (Multi Customer),42670554.75
+XTNVP3CL21D6\I6 - ET409 (Multi Customer),Cluster XTNVP3CL21,[S4] ET409 (Multi Customer),21611776
+XTNVCL07D2\I2 - ET431 Encrypted (Royal Bank of Canada),Cluster XTNVCL07,[S4] ET431 Encrypted (Royal Bank of Canada),71850084.88
+LAS1P03C040I06\I06 - ET27 (Nike),Cluster LAS1P03C040,[S4] ET27 (Nike),40973717.31
+XTNVP3CL18D4\I4 - ET411 (One Kings Lane) (SAN8),Cluster XTNVP3CL18,[S4] ET411 (One Kings Lane) (SAN8),20297945.25
+XTNVP3CL18D6\I6 - ET420 (Gilt.com) (SAN8),Cluster XTNVP3CL18,[S4] ET420 (Gilt.com) (SAN8),42310912
+XTNVCL07D1\I1 - ET430 (Multi Customer),Cluster XTNVCL07,[S4] ET430 (Multi Customer),18100224
+XTNVCL03D6\I6 - ET419 (Multi Customer),Cluster XTNVCL03,[S4] ET419 (Multi Customer),20927331.06
+XTNVCL04D1\I1 - ET414 (Multi Customer),Cluster XTNVCL04,[S4] ET414 (Multi Customer),13232875.94
+XTNVP3CL18D3\I3 - ET32 (Microsoft Online) (SAN8),Cluster XTNVP3CL18,[S4] ET32 (Microsoft Online) (SAN8),38562496
+XTNVP3CL21D10\I10 - ET458 (Netshoes),Cluster XTNVP3CL21,[S4] ET458 (Netshoes),4503552
+XTNVP3CL18D1\I1 - ET425 (Multi Customer) (SAN9),Cluster XTNVP3CL18,[S4] ET425 (Multi Customer) (SAN9),72382937.94
+XTNVCL07D4\I4 - ET433 (Play.com),Cluster XTNVCL07,[S4] ET433 (Play.com),5029888
+XTNVP3CL18D5\I5 - ET33 (Multi Customer) (SAN8),Cluster XTNVP3CL18,[S4] ET33 (Multi Customer) (SAN8),72432394
+XTNVP3CL18D2\I2 - ET38 (Multi Customer) (SAN9),Cluster XTNVP3CL18,[S4] ET38 (Multi Customer) (SAN9),62334234.13
+XTNVCL01D6\I6 - ET423 (Dealfind),Cluster XTNVCL01,[S4] ET423 (Dealfind),5423104
