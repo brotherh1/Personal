@@ -21,6 +21,7 @@ jobs:
           echo "Release_tag: Latest Tag is : $Release_tag"
           if [ "$Release_tag" == "" ]; then
             $Release_tag = "1.0.0"
+          fi
           echo ::set-output name=Release_tag::"$Release_tag"
           
       - name: Checkout code
