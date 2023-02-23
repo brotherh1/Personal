@@ -52,8 +52,8 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            owner="Brotherh1"
-            repo="Personal"
+          owner="Brotherh1"
+          repo="Personal"
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
