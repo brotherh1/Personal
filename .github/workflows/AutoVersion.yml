@@ -1,4 +1,4 @@
-name: Creation of Release Version
+name: MAIN Branch Versioning
 on:
   pull_request:
     branches: [master]
