@@ -19,7 +19,7 @@ jobs:
           release_json=$(curl https://api.github.com/repos/$owner/$repo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           echo "Release_tag: Latest Tag is : $Release_tag"
-          if [ "$Release_tag" == "null" ]; then
+          if [ "$Release_tag" == '' ]; then
             $Release_tag = "1.0.0"
             echo "Release_tag: Latest Tag is : $Release_tag"
           fi
