@@ -1,7 +1,7 @@
 name: Creation of Release Version
 on:
   pull_request:
-    branches: [master]
+    branches: [dev]
     types:
       - closed
 
@@ -16,7 +16,7 @@ jobs:
         run: |
           owner="Brotherh1"
           repo="Personal"
-          release_json=$(curl https://api.github.com/repos/$owner/$repo/releases)
+          release_json=$(curl https://api.github.com/repos/$owner/$repo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           echo "Release_tag: Latest Tag is : $Release_tag"
           echo ::set-output name=Release_tag::"$Release_tag"
@@ -59,16 +59,16 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
