@@ -23,8 +23,6 @@ jobs:
           TargetOwner=$( echo "$RepoInfo" | cut -d "/" -f 1 )
           echo "Target Owner: $TargetOwner"
           release_json=$(curl https://api.github.com/repos/$TargetOwner/$TargetRepo/releases)
-          echo "$release_json" | jq -r 
-          #release_json=$(curl https://api.github.com/repos/$TargetOwner/$TargetRepo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           if [[ "$Release_tag" == *"."* ]]; then
             echo "$TargetBranch branch tag found"
@@ -73,17 +71,17 @@ jobs:
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$TargetOwner/$TargetRepo/tags \
-            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+             https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
+            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release - Major $TargetBranch includes all lower minor and patches  ","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$TargetOwner/$TargetRepo/tags \
-            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+             https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
+            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release - MINOR $TargetBranch","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$TargetOwner/$TargetRepo/tags \
+             https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
             -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release - Patch $TargetBranch","draft":false,"prerelease":false,"generate_release_notes":false}'
