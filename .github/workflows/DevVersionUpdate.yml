@@ -16,12 +16,14 @@ jobs:
         run: |
           owner="Brotherh1"
           repo="Personal"
+          echo ${{ github.ref }}
           release_json=$(curl https://api.github.com/repos/$owner/$repo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           echo "Release_tag: Latest Tag is : $Release_tag"
-          if [ "$Release_tag" == null ]; then
-            $Release_tag = "1.0.0"
-            echo "Release_tag: Latest Tag is : $Release_tag"
+          if [[ contains($Release_tag, '.') ]]; then
+            echo "DEV branch tag found"
+          else
+            echo "DEV branch tag NOT found"
           fi
           echo ::set-output name=Release_tag::"$Release_tag"
           
