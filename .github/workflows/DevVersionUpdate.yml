@@ -75,7 +75,7 @@ jobs:
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
+            -s https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
             -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"${{ github.base.ref }}","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"MAJOR - Description of the release - includes all lower minor and patches  ","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
