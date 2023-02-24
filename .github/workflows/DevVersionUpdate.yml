@@ -57,7 +57,7 @@ jobs:
           
       - name: Bumping Patch Index 
         id: bump_version_patch
-        if: contains(github.event.pull_request.title, 'patch')
+        if: contains(github.event.pull_request.title, 'patch') && ( ${{ github.ref }} = 'dev' )
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
           current-version: ${{ steps.releaseVersion.outputs.Release_tag }}
