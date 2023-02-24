@@ -20,9 +20,9 @@ jobs:
           echo "Target Branch: $TargetBranch"
           RepoInfo=${{ github.repository }}
           echo "Repo Info: $RepoInfo"
-          TargetRepo = $( echo "$RepoInfo" | cut -d "/" -f 2 )
+          TargetRepo=$( echo "$RepoInfo" | cut -d "/" -f 2 )
           echo "Target Repo: $TargetRepo "
-          TargetOwner = $( echo "$RepoInfo" | cut -d "/" -f 1 )
+          TargetOwner=$( echo "$RepoInfo" | cut -d "/" -f 1 )
           echo "Target Owner: $TargetOwner"
           release_json=$(curl https://api.github.com/repos/$TargetOwner/$TargetRepo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
