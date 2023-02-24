@@ -49,7 +49,7 @@ jobs:
                     
       - name: Bumping Minor Index
         id: bump_version_minor
-        if: contains(github.event.pull_request.title, 'minor')
+        if: contains(github.event.pull_request.title, 'minor') && ( ${{ github.ref }} = ${{ github.base.ref }} )
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
           current-version: ${{ steps.releaseVersion.outputs.Release_tag }}
