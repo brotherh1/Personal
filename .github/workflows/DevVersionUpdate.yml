@@ -69,6 +69,14 @@ jobs:
         run: |
           owner="Brotherh1"
           repo="Personal"
+          TargetBranch=${{ github.ref }}
+          echo "Target Branch: $TargetBranch"
+          RepoInfo=${{ github.repository }}
+          echo "Repo Info: $RepoInfo"
+          TargetRepo = $( echo "$RepoInfo" | cut -d "/" -f 1 )
+          echo "Target Repo: $TargetRepo "
+          TargetOwner = $( echo "$RepoInfo" | cut -d "/" -f 2 )
+          echo "Target Owner: $TargetOwner"
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
