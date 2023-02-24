@@ -69,17 +69,17 @@ jobs:
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/releases \
+             https://api.github.com/repos/$owner/$repo/tags \
             -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/releases \
+             https://api.github.com/repos/$owner/$repo/tags \
             -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/releases \
+             https://api.github.com/repos/$owner/$repo/tags \
             -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
