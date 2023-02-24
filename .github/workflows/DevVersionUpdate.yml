@@ -14,8 +14,6 @@ jobs:
       - name: Taking the Latest Release Tag number
         id: releaseVersion
         run: |
-          # owner="Brotherh1"
-          # repo="Personal"
           TargetBranch=${{ github.ref }}
           echo "Target Branch: $TargetBranch"
           RepoInfo=${{ github.repository }}
@@ -67,23 +65,23 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          owner="Brotherh1"
-          repo="Personal"
-          curl \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/tags \
-            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
-          curl \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/tags \
-            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+          #owner="Brotherh1"
+          #repo="Personal"
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$TargetOwner/$TargetRepo/tags \
-            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+             https://api.github.com/repos/$TargetOwner/$TargetRepo/tags \
+            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+             https://api.github.com/repos/$TargetOwner/$TargetRepo/tags \
+            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"$TargetBranch","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release - Patch $TargetBranch","draft":false,"prerelease":false,"generate_release_notes":false}'
