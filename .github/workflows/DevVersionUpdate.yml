@@ -16,6 +16,8 @@ jobs:
         run: |
           TargetBranch=${{ github.ref }}
           echo "Target Branch: $TargetBranch"
+          BaseBranch=${{ github.base.ref }}
+          echo "Base Bracnh: $BaseBranch"
           RepoInfo=${{ github.repository }}
           echo "Repo Info: $RepoInfo"
           TargetRepo=$( echo "$RepoInfo" | cut -d "/" -f 2 )
