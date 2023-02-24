@@ -19,6 +19,8 @@ jobs:
           echo "GitHub.ref "${{ github.ref }}
           echo "Repo Owner "${{ github.repository.owner }}
           echo "Repo Info "${{ github.repository }}
+          RepoInfo=${{ github.repository }}
+          echo "Repo Ino $RepoInfo"
           release_json=$(curl https://api.github.com/repos/$owner/$repo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           echo "Release_tag: Latest Tag is : $Release_tag"
@@ -26,7 +28,7 @@ jobs:
             echo "DEV branch tag found"
           else
             echo "DEV branch tag NOT found"
-            Release_tag="1.0.0"
+            Release_tag=$(echo "1.0.0")
           fi
           echo ::set-output name=Release_tag::"$Release_tag"
           
