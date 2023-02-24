@@ -22,7 +22,9 @@ jobs:
           echo "Target Repo: $TargetRepo "
           TargetOwner=$( echo "$RepoInfo" | cut -d "/" -f 1 )
           echo "Target Owner: $TargetOwner"
-          release_json=$(curl https://api.github.com/repos/$TargetOwner/$TargetRepo/tags)
+          release_json=$(curl https://api.github.com/repos/$TargetOwner/$TargetRepo/releases)
+          echo "$release_json" | jq -r 
+          #release_json=$(curl https://api.github.com/repos/$TargetOwner/$TargetRepo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           if [[ "$Release_tag" == *"."* ]]; then
             echo "$TargetBranch branch tag found"
