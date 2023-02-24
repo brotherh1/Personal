@@ -17,10 +17,10 @@ jobs:
           owner="Brotherh1"
           repo="Personal"
           echo "GitHub.ref "${{ github.ref }}
-          echo "Repo Owner "${{ github.repository.owner }}
-          echo "Repo Info "${{ github.repository }}
           RepoInfo=${{ github.repository }}
-          echo "Repo Ino $RepoInfo"
+          echo "Repo Info $RepoInfo"
+          echo "$RepoInfo" | cut -d "/" -f 1
+          echo "$RepoInfo" | cut -d "/" -f 2
           release_json=$(curl https://api.github.com/repos/$owner/$repo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           echo "Release_tag: Latest Tag is : $Release_tag"
@@ -69,17 +69,17 @@ jobs:
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/releases \
+             https://api.github.com/repos/$owner/$repo/tags \
             -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/releases \
+             https://api.github.com/repos/$owner/$repo/tags \
             -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             https://api.github.com/repos/$owner/$repo/releases \
+             https://api.github.com/repos/$owner/$repo/tags \
             -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"dev","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
