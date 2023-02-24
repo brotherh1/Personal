@@ -17,10 +17,10 @@ jobs:
           owner="Brotherh1"
           repo="Personal"
           echo "GitHub.ref "${{ github.ref }}
-          echo "Repo Owner "${{ github.repository.owner }}
-          echo "Repo Info "${{ github.repository }}
           RepoInfo=${{ github.repository }}
-          echo "Repo Ino $RepoInfo"
+          echo "Repo Info $RepoInfo"
+          echo "$RepoInfo" | cut -d "/" -f 1
+          echo "$RepoInfo" | cut -d "/" -f 2
           release_json=$(curl https://api.github.com/repos/$owner/$repo/tags)
           Release_tag=$(echo "$release_json" | jq -r '.[0].tag_name')
           echo "Release_tag: Latest Tag is : $Release_tag"
