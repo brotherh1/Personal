@@ -95,4 +95,4 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release - Patch ${{ steps.releaseVersion.TargetBranch }}","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release - Patch $TargetBranch","draft":false,"prerelease":false,"generate_release_notes":false}'
