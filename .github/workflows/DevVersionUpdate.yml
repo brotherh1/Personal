@@ -67,8 +67,6 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TargetBranch=${{ github.ref }}
-          echo "Target Branch: $TargetBranch"
           RepoInfo=${{ github.repository }}
           echo "Repo Info: $RepoInfo"
           TargetRepo=$( echo "$RepoInfo" | cut -d "/" -f 2 )
@@ -83,16 +81,16 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"Description of the release - Major $TargetBranch includes all lower minor and patches  ","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_major.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_major.outputs.next-version }}","body":"MAJOR - Description of the release - includes all lower minor and patches  ","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"Description of the release - MINOR $TargetBranch","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_minor.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_minor.outputs.next-version }}","body":"MINOR - Description of the release ","draft":false,"prerelease":false,"generate_release_notes":false}'
           curl \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$TargetOwner/$TargetRepo/releases \
-            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"master","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"Description of the release - Patch ${{ github.ref }}","draft":false,"prerelease":false,"generate_release_notes":false}'
+            -d '{"tag_name":"${{ steps.bump_version_patch.outputs.next-version }}","target_commitish":"$ReleaseBranch","name":"${{ steps.bump_version_patch.outputs.next-version }}","body":"PATCH - Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
